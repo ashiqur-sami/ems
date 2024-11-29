@@ -1,0 +1,20 @@
+{% extends "employees/base.html" %}
+
+{% block content %}
+<div class="card mt-5 mx-auto shadow" style="max-width: 400px;">
+    <div class="card-body">
+        <h1 class="text-center mb-4">Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </div>
+        </form>
+        {% if form.errors %}
+        <p class="text-danger text-center mt-3">Invalid username or password. Please try again.</p>
+        {% endif %}
+        <p class="text-center mt-3">Don't have an account? <a href="{% url 'register' %}" class="text-primary">Register here</a>.</p>
+    </div>
+</div>
+{% endblock %}
