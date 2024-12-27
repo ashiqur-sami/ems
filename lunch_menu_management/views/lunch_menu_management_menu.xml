@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="lunch_menu_management_menu_root" name="Lunch Menu"
+              web_icon="lunch_menu_management,static/description/icon.png" sequence="100">
+        <menuitem id="menu_menu_action" name="Menu" action="menu_action" sequence="10"/>
+        <menuitem id="menu_lunch_action" name="Lunch" action="lunch_action" sequence="5"/>
+    </menuitem>
+</odoo>
+

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lunch_menu_management_lunch,lunch_menu_management.lunch,model_lunch_menu_management_lunch,base.group_user,1,1,1,1
+access_lunch_menu_management_menu,lunch_menu_management.menu,model_lunch_menu_management_menu,base.group_user,1,1,1,1
+
+
+

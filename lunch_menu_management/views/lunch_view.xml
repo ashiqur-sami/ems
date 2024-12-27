@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="lunch_view_form" model="ir.ui.view">
+        <field name="name">lunch.menu>form</field>
+        <field name="model">lunch_menu_management.lunch</field>
+        <field name="arch" type="xml">
+            <form string="Order a Lunch">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="menu_item_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
+                            <field name="day"/>
+                        </group>
+                        <group>
+                            <field name="qty" string="quantity"/>
+                            <field name="total_price" string="Total bill"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="lunch_view_tree" model="ir.ui.view">
+        <field name="name">lunch.view.tree</field>
+        <field name="model">lunch_menu_management.lunch</field>
+        <field name="arch" type="xml">
+            <tree string="Lunch order list">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="menu_item_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                <field name="day"/>
+                <field name="qty" string="Quantity"/>
+                <field name="total_price" string="Total bill"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="lunch_action" model="ir.actions.act_window">
+        <field name="name">Lunch</field>
+        <field name="res_model">lunch_menu_management.lunch</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a lunch
+            </p>
+            <p>
+                You can add multiple menus
+            </p>
+        </field>
+    </record>
+
+</odoo>
+
+

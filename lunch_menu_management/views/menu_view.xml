@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="menu_view_tree" model="ir.ui.view">
+        <field name="name">menu.view.tree</field>
+        <field name="model">lunch_menu_management.menu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="menu_item"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="menu_view_form" model="ir.ui.view">
+        <field name="name">menu.view.from</field>
+        <field name="model">lunch_menu_management.menu</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="menu_item"/>
+                            <field name="price"/>
+                        </group>
+                        <group>
+                            <field name="default_currency"/>
+                            <field name="color" readonly="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="menu_action" model="ir.actions.act_window">
+        <field name="name">Menu</field>
+        <field name="res_model">lunch_menu_management.menu</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a menu
+            </p>
+            <p>
+                Add price with menu
+            </p>
+        </field>
+    </record>
+</odoo>
+
